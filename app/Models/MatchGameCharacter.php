@@ -16,4 +16,26 @@ class MatchGameCharacter extends Model
         'player_id',
         'game_character_id',
     ];
+
+    /**
+     * Relationships
+     */
+
+     /**
+     * Relationships (Inverse)
+     */ 
+    public function gameCharacter()
+    {
+        return $this->belongsTo(GameCharacter::class);
+    }
+
+    public function matchGame()
+    {
+        return $this->belongsTo(MatchGame::class);
+    }
+
+    public function player()
+    {
+        return $this->belongsTo(Player::class);
+    }
 }

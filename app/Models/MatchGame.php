@@ -16,4 +16,25 @@ class MatchGame extends Model
         'game_number',
         'winner_player_id',
     ];
+
+    /**
+     * Relationships
+     */
+    public function matchGameCharacter()
+    {
+        return $this->hasMany(MatchGameCharacter::class);
+    }
+
+     /**
+     * Relationships (Inverse)
+     */ 
+    public function matchup()
+    {
+        return $this->belongsTo(Matchup::class);
+    }
+
+    public function player()
+    {
+        return $this->belongsTo(Player::class);
+    }
 }

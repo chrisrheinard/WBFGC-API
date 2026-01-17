@@ -22,4 +22,25 @@ class Tournament extends Model
         'start_at',
         'end_at'
     ];
+
+    /**
+     * Relationships
+     */
+    public function participant()
+    {
+        return $this->hasMany(Participant::class);
+    }
+
+    public function matchup()
+    {
+        return $this->hasMany(Matchup::class);
+    }
+
+     /**
+     * Relationships (Inverse)
+     */ 
+    public function game()
+    {
+        return $this->belongsTo(Game::class);
+    }
 }

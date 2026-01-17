@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('role')->default('player'); //player, organizer, admin
+            $table->unsignedTinyInteger('role')->default(0); //0 = player, 1 = organizer, 2 = admin
             $table->boolean('community_member')->default(false);
             $table->rememberToken();
             $table->timestamps();

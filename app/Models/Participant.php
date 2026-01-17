@@ -16,4 +16,21 @@ class Participant extends Model
         'seed',
         'tournament_id',
     ];
+
+    /**
+     * Relationships
+     */
+
+     /**
+     * Relationships (Inverse)
+     */ 
+    public function tournament()
+    {
+        return $this->belongsTo(Tournament::class);
+    }
+
+    public function player()
+    {
+        return $this->belongsTo(Player::class);
+    }
 }

@@ -18,4 +18,30 @@ class Matchup extends Model
         'best_of',
         'winner_player_id',
     ];
+
+    /**
+     * Relationships
+     */
+    public function matchGame()
+    {
+        return $this->hasMany(MatchGame::class);
+    }
+
+    public function ratingEvent()
+    {
+        return $this->hasMany(RatingEvent::class);
+    }
+    
+    /**
+     * Relationships (Inverse)
+     */ 
+    public function tournament()
+    {
+        return $this->belongsTo(Tournament::class);
+    }
+
+    public function player()
+    {
+        return $this->belongsTo(Player::class);
+    }
 }

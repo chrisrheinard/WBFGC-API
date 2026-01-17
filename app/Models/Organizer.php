@@ -20,4 +20,16 @@ class Organizer extends Model
         'social_media',
         'avatar',
     ];
+
+    /**
+     * Relationships
+     */
+
+     /**
+     * Relationships (Inverse)
+     */ 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

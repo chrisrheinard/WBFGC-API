@@ -17,4 +17,16 @@ class RefreshToken extends Model
         'expires_at',
         'revoked_at',
     ];
+
+    /**
+     * Relationships
+     */
+
+     /**
+     * Relationships (Inverse)
+     */ 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

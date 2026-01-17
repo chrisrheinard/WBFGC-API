@@ -16,4 +16,20 @@ class GameCharacter extends Model
         'name',
         'avatar'
     ];
+
+    /**
+     * Relationships
+     */
+    public function matchGameCharacter()
+    {
+        return $this->hasMany(MatchGameCharacter::class);
+    }
+
+     /**
+     * Relationships (Inverse)
+     */ 
+    public function game()
+    {
+        return $this->belongsTo(Game::class);
+    }
 }

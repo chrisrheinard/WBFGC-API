@@ -21,4 +21,26 @@ class RatingEvent extends Model
         'is_valid',
         'applied_at'
     ];
+
+    /**
+     * Relationships
+     */
+
+     /**
+     * Relationships (Inverse)
+     */ 
+    public function game()
+    {
+        return $this->belongsTo(Game::class);
+    }
+
+    public function matchup()
+    {
+        return $this->belongsTo(Matchup::class);
+    }
+
+    public function player()
+    {
+        return $this->belongsTo(Player::class);
+    }
 }

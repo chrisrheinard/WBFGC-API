@@ -18,4 +18,21 @@ class PlayerRating extends Model
         'rating_deviation',
         'volatility',
     ];
+
+    /**
+     * Relationships
+     */
+
+     /**
+     * Relationships (Inverse)
+     */ 
+    public function game()
+    {
+        return $this->belongsTo(Game::class);
+    }
+
+    public function player()
+    {
+        return $this->belongsTo(Player::class);
+    }
 }

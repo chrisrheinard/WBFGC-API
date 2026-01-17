@@ -66,4 +66,22 @@ class User extends Authenticatable implements JWTSubject
             'password' => 'hashed',
         ];
     }
+
+    /**
+     * Relationships
+     */
+    public function player()
+    {
+        return $this->hasOne(Player::class);
+    }
+
+    public function organizer()
+    {
+        return $this->hasOne(Organizer::class);
+    }
+
+    public function refreshToken()
+    {
+        return $this->hasMany(refreshToken::class);
+    }
 }

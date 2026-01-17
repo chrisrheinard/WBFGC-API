@@ -17,8 +17,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('phone');
             $table->string('address');
-            $table->string('biodata');
-            $table->string('social_media');
+            $table->text('biodata');
             $table->string('avatar');
             $table->timestamps();
         });
